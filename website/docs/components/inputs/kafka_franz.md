@@ -716,11 +716,11 @@ Default: `""`
 
 ### `sasl[].kerberos_config_path`
 
-The path to a kerberos configuration file (krb5.conf). Required when mechanism is set to `GSSAPI`.
+The path to a kerberos configuration file (krb5.conf). Used when mechanism is set to `GSSAPI`.
 
 
 Type: `string`  
-Default: `""`  
+Default: `"/etc/krb5.conf"`  
 
 ### `sasl[].keytab_path`
 
