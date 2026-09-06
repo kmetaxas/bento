@@ -2,6 +2,7 @@ package kafka
 
 import (
 	"context"
+	"errors"
 	"fmt"
 
 	"github.com/jcmturner/gokrb5/v8/client"
@@ -45,7 +46,7 @@ func kerberosSaslFromConfig(c *service.ParsedConfig) (sasl.Mechanism, error) {
 	}
 
 	if keytabPath == "" {
-		return nil, fmt.Errorf("field 'keytab_path' is required for GSSAPI SASL mechanism")
+		return nil, errors.New("field 'keytab_path' is required for GSSAPI SASL mechanism")
 	}
 
 	// Load once at config parse time. The actual gokrb5 client is created
